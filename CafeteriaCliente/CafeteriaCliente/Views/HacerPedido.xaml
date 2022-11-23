@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClienteCafe.HacerPedido" Background="#F6E9C9">
+    <ScrollView>
+        <StackLayout>
+            <Image Source="tl5.png"  WidthRequest="450"></Image>
+            <Label HorizontalOptions="Center" Margin="0,-30,0,0" FontSize="45" FontFamily="Aichella" TextColor="#55251B">PEDIDO</Label>
+            <Label FontFamily="Adriana Juliewis" Margin="10,0,0,0" FontSize="30" TextColor="#8C472A">Numero de Mesa</Label>
+            <Entry Margin="20,0,50,20"></Entry>
+            <Image Source="waffle.jpg" WidthRequest="210" Margin="0,0,140,0"></Image>
+            <Image Source="crepa.jpg"  WidthRequest="200" Margin="0,0,-150,0"></Image>
+            <Image Source="cafe.jpg"  WidthRequest="210" Margin="0,0,140,0"></Image>
+            <Image Source="frape.png"  WidthRequest="210" Margin="0,0,-150,0"></Image>
+
+        </StackLayout>
+    </ScrollView>
+       
+   
+</ContentPage>
