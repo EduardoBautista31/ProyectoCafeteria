@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CafeteriaCliente.MainPage" Background="#F6E9C9">
+
+    <StackLayout>
+        <Image Source="foc.png" WidthRequest="450" ></Image>
+        <Image Source="coff.png" WidthRequest="170" Margin="0,-20,0,0"></Image>
+        <Label Text="Sakura Coffee" FontFamily="Adriana Juliewis" HorizontalTextAlignment="Center" Margin="0,-50,0,0" TextColor="#553C42" FontSize="70"/>
+
+        <Button  Clicked="Ir" BorderColor="White" FontSize="18" BorderWidth="3" CornerRadius="20" HorizontalOptions="Center" Margin="0,20,0,20" WidthRequest="300" Text="Hacer Pedido" FontFamily="Aichella"  Background="#C48A4B"></Button>
+        <Button BorderColor="White" BorderWidth="3" FontSize="18" CornerRadius="20" HorizontalOptions="Center" WidthRequest="300" Text="Historia" Background="#C48A4B"  FontFamily="Aichella"></Button>
+    </StackLayout>
+
+</ContentPage>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CafeteriaServidor.ViewModels
 {
-    internal class PlatilloViewModels : INotifyPropertyChanged
+    public class PlatilloViewModels : INotifyPropertyChanged
     {
         CafeteriaServices servicio = new CafeteriaServices();
         public ObservableCollection<Platillo> platillos = new ObservableCollection<Platillo>();
@@ -21,13 +21,14 @@ namespace CafeteriaServidor.ViewModels
         }
 
         private void Servicio_ordenrecibida(Models.Platillo obj)
-        {
+        {            
             platillos.Add(obj);
             Actualizar();
         }
 
         private void Iniciar()
         {
+           
             servicio.Iniciar();
             Actualizar();
         }

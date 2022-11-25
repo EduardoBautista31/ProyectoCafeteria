@@ -15,15 +15,15 @@ namespace CafeteriaServidor.Services
     {
         //ESTE ES EL SERVIDOR
         HttpListener listener = new HttpListener();
-        public event Action<Platillo> ordenrecibida;
+        public event Action<Platillo>? ordenrecibida;
         public CafeteriaServices()
         {
-            listener.Prefixes.Add("http://*:12056/pedidos");
+            listener.Prefixes.Add("http://*:12056/pedidos/");
 
         }
         public void Iniciar()
         {
-            if (!listener.IsListening)
+            if (listener.IsListening)
             {
                 listener.Start();
                 listener.BeginGetContext(ContextoRecibido, null);

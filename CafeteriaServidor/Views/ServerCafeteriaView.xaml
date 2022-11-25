@@ -4,23 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CafeteriaServidor.Views"
+         xmlns:vm="clr-namespace:CafeteriaServidor.ViewModels"
         mc:Ignorable="d"
-        Title="ServerCafeteriaView" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Image Source="/Source/d.png" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Grid.RowSpan="4"></Image>
-        <Image Width="120" Source="/Source/Posti.png" Grid.Column="2" Grid.Row="1"></Image>
+        Title="ServerCafeteriaView" Height="450" Width="800" Background="LightYellow">
+    <Window.DataContext>
+        <vm:PlatilloViewModels></vm:PlatilloViewModels>
+    </Window.DataContext>
+   
+    <Grid Margin="100" >
+        <ListBox ItemsSource="{Binding platillos}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel>
+                        
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+                
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>Mesa</TextBlock>
+                        <TextBlock>Waffles</TextBlock>
+                        <TextBlock Text="{Binding CantidadPlatillos1}"></TextBlock>
+                        <TextBlock>Crepa</TextBlock>
+                        <TextBlock Text="{Binding CantidadPlatillos2}"></TextBlock>
+                        <TextBlock>Cafe</TextBlock>
+                        <TextBlock Text="{Binding CantidadPlatillos3}">0</TextBlock>
+                        <TextBlock>Frape</TextBlock>
+                        <TextBlock Text="{Binding CantidadPlatillos4}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

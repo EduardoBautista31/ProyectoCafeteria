@@ -15,6 +15,12 @@ namespace CafeteriaCliente
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         async void Ir(object sender, EventArgs a)
         {
             await Navigation.PushAsync(new HacerPedido());
