@@ -18,12 +18,12 @@ namespace CafeteriaServidor.Services
         public event Action<Platillo>? ordenrecibida;
         public CafeteriaServices()
         {
-            listener.Prefixes.Add("http://*:12056/pedidos/");
+            listener.Prefixes.Add("http://*:9000/pedidos/");
 
         }
         public void Iniciar()
         {
-            if (listener.IsListening)
+            if (!listener.IsListening)
             {
                 listener.Start();
                 listener.BeginGetContext(ContextoRecibido, null);

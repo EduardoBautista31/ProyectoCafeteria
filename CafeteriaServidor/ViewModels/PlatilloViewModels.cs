@@ -7,30 +7,39 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace CafeteriaServidor.ViewModels
 {
     public class PlatilloViewModels : INotifyPropertyChanged
     {
         CafeteriaServices servicio = new CafeteriaServices();
-        public ObservableCollection<Platillo> platillos = new ObservableCollection<Platillo>();
+        public ObservableCollection<Platillo> platillos { get; set; } = new ObservableCollection<Platillo>();
+
+        Dispatcher Dispatcher;
         public PlatilloViewModels()
         {
             Iniciar();
+            Dispatcher = Dispatcher.CurrentDispatcher;
             servicio.ordenrecibida += Servicio_ordenrecibida;
         }
 
         private void Servicio_ordenrecibida(Models.Platillo obj)
-        {            
-            platillos.Add(obj);
-            Actualizar();
+        {
+            Dispatcher.BeginInvoke(() =>
+            {
+                platillos.Add(obj);
+                Actualizar();
+            });
         }
 
         private void Iniciar()
         {
-           
-            servicio.Iniciar();
-            Actualizar();
+            
+                servicio.Iniciar();
+                Actualizar();
+            
+            
         }
         void Actualizar(string? name=null)
         {

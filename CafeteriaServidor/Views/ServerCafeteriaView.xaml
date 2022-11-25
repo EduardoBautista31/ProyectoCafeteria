@@ -12,7 +12,12 @@
     </Window.DataContext>
    
     <Grid Margin="100" >
-        <ListBox ItemsSource="{Binding platillos}">
+        <Canvas>
+            <Canvas >
+                <Label>Coffee</Label>
+            </Canvas>
+        </Canvas>
+        <ListBox ItemsSource="{Binding platillos}" FontFamily="stencil" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel>
@@ -23,7 +28,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock>Mesa</TextBlock>
                         <TextBlock>Waffles</TextBlock>
                         <TextBlock Text="{Binding CantidadPlatillos1}"></TextBlock>
