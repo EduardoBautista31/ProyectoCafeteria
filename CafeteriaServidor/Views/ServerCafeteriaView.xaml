@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:CafeteriaServidor.Views"
          xmlns:vm="clr-namespace:CafeteriaServidor.ViewModels"
         mc:Ignorable="d"
-        Title="ServerCafeteriaView" Height="450" Width="800" Background="LightYellow">
+        Title="ServerCafeteriaView" Height="450" Width="800" Background="LightGoldenrodYellow">
     <Window.DataContext>
         <vm:PlatilloViewModels></vm:PlatilloViewModels>
     </Window.DataContext>
    
     <Grid Margin="100" >
         <Canvas>
-            <Canvas >
-                <Label>Coffee</Label>
+            <Canvas Canvas.Left="140" Canvas.Bottom="300" >
+                <Label Foreground="Brown" FontFamily="Segoe Script"  FontSize="50">Sakura Coffee</Label> 
             </Canvas>
         </Canvas>
-        <ListBox ItemsSource="{Binding platillos}" FontFamily="stencil" >
+        <ListBox Background="RosyBrown" ItemsSource="{Binding platillos}" FontFamily="stencil" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel>
@@ -28,16 +28,17 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Margin="10">
-                        <TextBlock>Mesa</TextBlock>
-                        <TextBlock>Waffles</TextBlock>
-                        <TextBlock Text="{Binding CantidadPlatillos1}"></TextBlock>
-                        <TextBlock>Crepa</TextBlock>
-                        <TextBlock Text="{Binding CantidadPlatillos2}"></TextBlock>
-                        <TextBlock>Cafe</TextBlock>
-                        <TextBlock Text="{Binding CantidadPlatillos3}">0</TextBlock>
-                        <TextBlock>Frape</TextBlock>
-                        <TextBlock Text="{Binding CantidadPlatillos4}"></TextBlock>
+                    <StackPanel Background="RosyBrown" Margin="10">
+                        <TextBlock FontSize="25" Foreground="Black" FontFamily="Impact">Mesa</TextBlock>
+                        <TextBlock FontSize="25" Text="{Binding NumeroMesa}"></TextBlock>
+                        <TextBlock FontSize="25" Foreground="Black" FontFamily="Impact">Waffles</TextBlock>
+                        <TextBlock FontSize="25" Text="{Binding CantidadPlatillos1}"></TextBlock>
+                        <TextBlock FontSize="25" Foreground="Black" FontFamily="Impact">Crepa</TextBlock>
+                        <TextBlock FontSize="25" Text="{Binding CantidadPlatillos2}"></TextBlock>
+                        <TextBlock FontSize="25" Foreground="Black" FontFamily="Impact">Cafe</TextBlock>
+                        <TextBlock FontSize="25" Text="{Binding CantidadPlatillos3}"></TextBlock>
+                        <TextBlock FontSize="25" Foreground="Black" FontFamily="Impact">Frape</TextBlock>
+                        <TextBlock FontSize="25" Text="{Binding CantidadPlatillos4}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
